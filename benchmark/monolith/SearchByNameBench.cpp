@@ -15,7 +15,7 @@ bool SearchFile(const fs::path& directory, const std::string& filename) {
 }
 
 int main() {
-    const std::string directory = "/home/enderdissa/Documents/labs/OS/lab1/diy-shell-benchmark-24y-EnderDissa/benchmark/monolith/test_directory";
+    const std::string directory = "/home/enderdissa/Documents/";
     const std::string filename = "target_file.txt";
 
     auto start = std::chrono::high_resolution_clock::now();

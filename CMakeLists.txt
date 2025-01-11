@@ -12,10 +12,10 @@ include(cmake/CompileOptions.cmake)
 add_subdirectory(source)
 
 if(MONOLITH_DEVELOPER)
-    find_package(GTest REQUIRED)
+    find_package(test)
+
 endif()
     
 if(MONOLITH_BENCHMARK)
-    find_package(GBenchmark REQUIRED)
     add_subdirectory(benchmark)
 endif()
