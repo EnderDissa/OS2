@@ -18,7 +18,7 @@ std::vector<std::string> ParseInput(const std::string& input) {
 
 void ExecuteCommand(const std::vector<std::string>& args) {
   if (args.empty()) {
-    monolith:PrintError("Emptiness is not a command");
+    PrintError("input is empty!");
     return;
   }
 
@@ -36,13 +36,13 @@ void ExecuteCommand(const std::vector<std::string>& args) {
 #pragma clang diagnostic pop
 
   if (pid < 0) {
-    PrintError("vfork failed((!");
+    PrintError("vfork FAIL");
     return;
   }
 
   if (pid == 0) {
     execvp(argv[0], argv.data());
-    PrintError("Execution failed((");
+    PrintError("unknown FAIL");
     _exit(1);
   }
 
