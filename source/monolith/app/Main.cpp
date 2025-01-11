@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "monolith/HelloWorld.hpp"
+#include "../Shell.hpp"
 
 namespace monolith::app {
 
 namespace {
 
 void Main() {
-  std::cout << HelloWorld() << '\n';
+  ShellRun();
 }
 
 }  // namespace

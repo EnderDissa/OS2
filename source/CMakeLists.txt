@@ -3,12 +3,15 @@ get_filename_component(MONOLITH_SOURCE_PATH "./${PROJECT_NAME}" ABSOLUTE)
 
 file(GLOB_RECURSE MONOLITH_SOURCES CONFIGURE_DEPENDS *.hpp *.cpp)
 
-set(MONOLITH_LIB_SOURCES ${MONOLITH_SOURCES})
+set(MONOLITH_LIB_SOURCES ${MONOLITH_SOURCES}
+        monolith/Shell.cpp
+        monolith/MessageTools.cpp)
 
 set(MONOLITH_APP_SOURCES monolith/app/Main.cpp)
 
 add_library(${PROJECT_NAME} STATIC ${MONOLITH_LIB_SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${MONOLITH_INCLUDE_PATH})
+target_include_directories(monolith PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/source/monolith)
 
 add_executable(${PROJECT_NAME}-app ${MONOLITH_APP_SOURCES})
 set_property(TARGET ${PROJECT_NAME}-app PROPERTY OUTPUT_NAME ${PROJECT_NAME})
@@ -16,3 +19,4 @@ target_link_libraries(
     ${PROJECT_NAME}-app PRIVATE
     ${PROJECT_NAME}
 )
+
