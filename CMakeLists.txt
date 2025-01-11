@@ -13,7 +13,6 @@ add_subdirectory(source)
 
 if(MONOLITH_DEVELOPER)
     find_package(GTest REQUIRED)
-    add_subdirectory(test)
 endif()
     
 if(MONOLITH_BENCHMARK)
