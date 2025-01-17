@@ -7,6 +7,8 @@
     "files.associations": {
         "iostream": "cpp",
         "iosfwd": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "*.tcc": "cpp",
+        "chrono": "cpp"
     },
 }

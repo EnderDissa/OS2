@@ -11,12 +11,17 @@ set(MONOLITH_BENCH_TARGET_BASE "Project-bench")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0") # For debugging
 set(CMAKE_CXX_FLAGS_RELEASE "-O0")
 
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/../source)
+include_directories(${CMAKE_SOURCE_DIR}/../source/cache)
+
 # Macro to declare benchmark targets
 macro(MONOLITH_BENCH_DECLARE suffix file)
     add_executable(
         ${MONOLITH_BENCH_TARGET_BASE}-${suffix}
         ${MONOLITH_BENCH_SOURCE_PATH}/${file}
         ${MONOLITH_BENCH_SOURCE_PATH}/Fun.cpp
+        ${CMAKE_SOURCE_DIR}/../source/cache/Cache.cpp
     )
 
     target_link_libraries(

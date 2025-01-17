@@ -1,7 +1,3 @@
-//
-// Created by zirtoshka on 19.10.2024.
-//
-
 #include "MessageTools.hpp"
 
 #include <string>
