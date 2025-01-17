@@ -6,6 +6,7 @@
     "files.eol": "\n",
     "files.associations": {
         "iostream": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "sstream": "cpp"
     },
 }
